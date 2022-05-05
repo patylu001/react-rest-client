@@ -61,13 +61,16 @@ export default class TodosList extends Component {
         }*/
 
     todoList() {
-        /* return this.state.todos.data.map(function (currentTodo, i) {
-             return <Todo tarea={currentTodo} key={i} />;
-         });*/
-        var t = { id: 1, name: "tarea1" }
-        var x = this.state.todos;
-        console.log(x);
-        return <Todo tarea={t} key={1} />;
+       if (this.state.todos.data) {
+            /*var t = { id: 1, name: "tarea1" }
+            console.log(this.state.todos.data);
+            var x = this.state.todos.data[0];
+            console.log(x);
+            return <Todo tarea={t} key={1} />;*/
+            return this.state.todos.data.map(function (currentTodo, i) {
+                return <Todo tarea={currentTodo} key={i} />;
+            });
+        }
     }
 
     render() {

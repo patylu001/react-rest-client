@@ -24,7 +24,7 @@ export default class TodosList extends Component {
 
     componentDidMount() {
         //this.getAllTareas();
-        axios.get('http://localhost:4000/tareas/')
+        axios.get('https://api-tareas-test.azurewebsites.net/tareas/')
             .then(response => {
                 //console.log(this.state.todos);
                 this.setState({ todos: response.data });
@@ -38,7 +38,7 @@ export default class TodosList extends Component {
         axios
             //.get("https://api-rpm-delightful-hyrax.w3ibm.mybluemix.net/api/today")
             //.get("http://rpm-api-buena.tds-test-cluster.containers.ciocloudservices.ibm.com/api/today") //kubernetes
-            .get("http://localhost:4000/tareas/") //cirrus
+            .get("https://api-tareas-test.azurewebsites.net/tareas/") //cirrus
             .then(response => response.data)
             .then(data => {
                 console.log(this.state.todos);
